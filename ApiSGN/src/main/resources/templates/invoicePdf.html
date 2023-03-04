@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <title>Factura</title>
+</head>
+<body>
+  <div class="header-container">
+    <div>
+      <h1>SGN</h1>
+    </div>
+    <div>
+      <h6>Nombre de ejemplo</h6>
+      <h6>Calle ejemplo, 123</h6>
+      <h6>negocio@gmail.com</h6>
+      <h6>295-335544</h6>
+      <h6>Santa Rosa, La Pampa(6300), Argentina</h6>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <table>
+      <thead>
+        <td>Producto</td>
+        <td>Precio</td>
+        <td>Unidades</td>
+        <td>Total</td>
+      </thead>
+      <tbody>
+        <tr th:each="saleItem: ${saleItemList}">
+          <td th:text="${saleItem.name}"></td>
+          <td th:text="${saleItem.price}"></td>
+          <td th:text="${saleItem.units}"></td>
+          <td th:text="${saleItem.total}"></td>
+        </tr>
+      </tbody>
+
+    </table>
+    <span>Total: </span><span th:text="${total}"></span>
+  </div>
+</body>
+</html>
